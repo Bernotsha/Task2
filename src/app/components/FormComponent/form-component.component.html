@@ -1,0 +1,153 @@
+<div class="information_page">
+    <div class="form_section">
+        <div class="form_field">
+            <label>
+                Name
+            </label>
+            <input 
+                [(ngModel)]="intern_name" 
+                type="text" />
+        </div>
+        <div class="form_field">
+            <label>
+                Age
+            </label>
+            <input 
+                [(ngModel)]="intern_age" 
+                type="number" />
+        </div>
+        <div class="form_field">
+            <label>
+                Mobile
+            </label>
+            <input 
+                [(ngModel)]="intern_mobile" 
+                type="number" 
+                maxlength="10" />
+        </div>
+        <div class="form_field">
+            <label>
+                Father's Name
+            </label>
+            <input 
+                [(ngModel)]="intern_fathername" 
+                type="text" />
+        </div>
+        <div class="form_field">
+            <label>
+                Mother's Name
+            </label>
+            <input 
+                [(ngModel)]="intern_mothername" 
+                type="text" />
+        </div>
+        <div class="form_field">
+            <label>
+                District
+            </label>
+            <input 
+                [(ngModel)]="intern_district" 
+                type="text" />
+        </div>
+        <div class="form_field">
+            <label>
+                State
+            </label>
+            <input 
+                [(ngModel)]="intern_state" 
+                type="text" />
+        </div>
+        <div class="form_field">
+            <label>
+                Nationality
+            </label>
+            <input 
+                [(ngModel)]="intern_nationality" 
+                type="text" />
+        </div>
+        <div class="form_field">
+            <label>
+                Pincode
+            </label>
+            <input 
+                [(ngModel)]="intern_pincode" 
+                type="number" />
+        </div>
+        <button 
+            class="submit_button" 
+            (click)="onSaveInternData()">
+            Submit Form
+        </button>
+        <button 
+            class="submit_button" 
+            (click)="onClearInternData()">
+            Clear
+        </button>
+    </div>
+    <div class="table_section">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Age
+                    </th>
+                    <th>
+                        Mobile
+                    </th>
+                    <th>
+                        Father's Name
+                    </th>
+                    <th>
+                        Mother's Name
+                    </th>
+                    <th>
+                        District
+                    </th>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        Nationality
+                    </th>
+                    <th>
+                        Pincode
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let intern of internList">
+                    <td>
+                        {{intern.intern_name}}
+                    </td>
+                    <td>
+                        {{intern.intern_age}}
+                    </td>
+                    <td>
+                        {{intern.intern_mobile}}
+                    </td>
+                    <td>
+                        {{intern.intern_fathername}}
+                    </td>
+                    <td>
+                        {{intern.intern_mothername}}
+                    </td>
+                    <td>
+                        {{intern.intern_district}}
+                    </td>
+                    <td>
+                        {{intern.intern_state}}
+                    </td>
+                    <td>
+                        {{intern.intern_nationality}}
+                    </td>
+                    <td>
+                        {{intern.intern_pincode}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

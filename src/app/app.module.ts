@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './components/BodyComponent/body-component.component';
 import { HeaderComponent } from './components/HeaderComponent/header-component.component';
 import { FormComponent } from './components/FormComponent/form-component.component';
+import { MyGenericTableComponent } from './my-generic-table/my-generic-table.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { FormComponent } from './components/FormComponent/form-component.compone
     HeaderComponent,
     BodyComponent,
     FormComponent,
+    MyGenericTableComponent,
   ],
   imports: [
     BrowserModule,

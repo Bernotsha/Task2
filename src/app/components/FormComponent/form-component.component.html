@@ -85,69 +85,10 @@
         </button>
     </div>
     <div class="table_section">
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Age
-                    </th>
-                    <th>
-                        Mobile
-                    </th>
-                    <th>
-                        Father's Name
-                    </th>
-                    <th>
-                        Mother's Name
-                    </th>
-                    <th>
-                        District
-                    </th>
-                    <th>
-                        State
-                    </th>
-                    <th>
-                        Nationality
-                    </th>
-                    <th>
-                        Pincode
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let intern of internList">
-                    <td>
-                        {{intern.intern_name}}
-                    </td>
-                    <td>
-                        {{intern.intern_age}}
-                    </td>
-                    <td>
-                        {{intern.intern_mobile}}
-                    </td>
-                    <td>
-                        {{intern.intern_fathername}}
-                    </td>
-                    <td>
-                        {{intern.intern_mothername}}
-                    </td>
-                    <td>
-                        {{intern.intern_district}}
-                    </td>
-                    <td>
-                        {{intern.intern_state}}
-                    </td>
-                    <td>
-                        {{intern.intern_nationality}}
-                    </td>
-                    <td>
-                        {{intern.intern_pincode}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <app-my-generic-table 
+            [table_header] = "table_header"
+            [rows]="internList" >
+        </app-my-generic-table>
     </div>
+
 </div>

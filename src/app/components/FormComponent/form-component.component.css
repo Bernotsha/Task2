@@ -34,28 +34,7 @@ label{
 }
 
 .information_page > .table_section{
-    background-color: whitesmoke;
     width: 66%;
     margin: 20px;
 }
 
-
-.information_page > .table_section > table{
-    width: 100%;
-    height: 100%;
-}
-
-table, td, tr, th{
-    padding: 10px;
-    border: 1px solid green;
-    border-collapse: collapse;
-}
-
-
- table >thead{
-    background-color: whitesmoke;
-}
-
-tr:nth-child(odd) {
-    background-color: whitesmoke;
-  }

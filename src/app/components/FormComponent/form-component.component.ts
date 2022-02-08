@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { InterServiceService } from "src/app/inter-service.service";
 import { Interns } from "../common/Intern";
 
 @Component({
@@ -8,10 +9,14 @@ import { Interns } from "../common/Intern";
 })
 
 export class FormComponent implements OnInit {
-    constructor() { }
-    ngOnInit(): void {
+    constructor(public interServiceService: InterServiceService) { }
 
+    ngOnInit(): void {
+        this.interServiceService.getInternData().subscribe( res => {
+            this.internList = res;
+        });    
     }
+    
     intern_name         : string = "";
     intern_age          : string = "";
     intern_mobile       : string = "";
@@ -24,25 +29,23 @@ export class FormComponent implements OnInit {
 
     internList: Interns[] = [];
 
-    internKeys: any = this.internList.keys;
+    table_header = [
+        "Name",
+        "Age",
+        "Mobile",
+        "Father's Name",
+        "Mother's Name",
+        "District",
+        "State",
+        "Nationality",
+        "Pincode"
+    ]
 
     onSaveInternData() {
-        let addIntern = new Interns();
-        if (this.intern_name != "" && this.intern_age!="" && this.intern_mobile!="" && this.intern_fathername!="" &&
-            this.intern_mothername!="" && this.intern_district!="" && this.intern_state!="" && this.intern_nationality!=""
-             && this.intern_pincode!="") {
-            addIntern.intern_name           = this.intern_name;
-            addIntern.intern_age            = this.intern_age;
-            addIntern.intern_mobile         = this.intern_mobile;
-            addIntern.intern_fathername     = this.intern_fathername;
-            addIntern.intern_mothername     = this.intern_mothername;
-            addIntern.intern_district       = this.intern_district;
-            addIntern.intern_state          = this.intern_state;
-            addIntern.intern_nationality    = this.intern_nationality;
-            addIntern.intern_pincode        = this.intern_pincode;
-            this.internList.push(addIntern);
-        }
+        this.interServiceService.saveData(this.intern_name, this.intern_age, this.intern_mobile, this.intern_fathername, this.intern_mothername,
+            this.intern_district, this.intern_state, this.intern_nationality, this.intern_pincode);
     }
+    
     onClearInternData() {
         this.intern_name        = "";
         this.intern_age         = "";
